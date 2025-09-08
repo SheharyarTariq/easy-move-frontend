@@ -1,11 +1,8 @@
 import React from 'react';
-import Header from '@/components/Layout/Header';
-import Footer from '@/components/Layout/Footer';
 import { Button } from '@/components/ui/button';
 import { 
   Home, 
   Building, 
-  Globe, 
   Package, 
   Warehouse, 
   Wrench,
