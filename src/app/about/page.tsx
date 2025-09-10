@@ -1,9 +1,8 @@
 import React from 'react';
-import Header from '@/components/Layout/Header';
-import Footer from '@/components/Layout/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Users, Award, Shield, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { config } from '../../../config';
 
 const About = () => {
   return (      
@@ -178,18 +177,20 @@ const About = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact" className="flex justify-center">
-                  <Button size="lg" className="bg-cta-gradient hover:opacity-90 shadow-button-custom flex-1">
+                  <Button size="lg" className="bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom flex-1">
                     Get Free Quote
                   </Button>
                 </Link>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  // onClick={() => alert('Call us now: 08001234567')}
-                >
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call: 08001234567
-                </Button>
+                <a href={`tel:${config.phoneNumber}`}>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="hover:cursor-pointer"
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Call: {config.phoneNumber}
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

@@ -9,6 +9,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import Link from "next/link";
+import { config } from "../../../config";
 import GetQuote from "../common/get-quote";
 
 const HeroSection = () => {
@@ -64,22 +65,22 @@ const HeroSection = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/30 bg-accent hover:bg-accent/90 text-accent-foreground shadow-button-custom text-lg px-8 py-6"
+                  className="border-primary-foreground/30 hover:cursor-pointer bg-accent hover:bg-accent/90 text-accent-foreground shadow-button-custom text-lg px-8 py-6"
                 >
                   Get Free Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <div>
+              <a href={`tel:${config.phoneNumber}`}>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/30 hover:bg-primary-foreground text-primary hover:text-primary text-lg px-8 py-6"
+                  className="border-primary-foreground/30 hover:cursor-pointer hover:bg-primary-foreground text-primary hover:text-primary text-lg px-8 py-6"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  <span>08001234567</span>
+                  <span>{config.phoneNumber}</span>
                 </Button>
-              </div>
+              </a>
             </div>
             {/* ✅ Extra Content (only when form expanded + visible on lg+) */}
             {isFormExpanded && (

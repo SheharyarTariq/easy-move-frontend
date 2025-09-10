@@ -1,4 +1,5 @@
 import React from 'react';
+import { config } from '../../../config';
 
 const Privacy = () => {
   return (
@@ -55,13 +56,13 @@ const Privacy = () => {
             </div>
 
             <div>
-              <h2 className="text-section text-primary mb-4">Contact Us</h2>
+              <h2 className="text-section text-primary/20 mb-4">Contact Us</h2>
               <p className="mb-4">
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
               <ul className="list-disc list-inside space-y-2">
-                <li>Email: info@easymove.co.uk</li>
-                <li>Phone: 0800 123 4567</li>
+                <li>Email: <a href={`mailto:${config.email}`} className="hover:underline hover:text-primary">{config.email}</a></li>
+                <li>Phone: <a href={`tel:${config.email}`} className="hover:underline hover:text-primary">{config.phoneNumber}</a></li>
               </ul>
             </div>
           </div>

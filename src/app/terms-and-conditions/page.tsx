@@ -1,4 +1,5 @@
 import React from 'react';
+import { config } from '../../../config';
 
 const TermsAndConditions = () => {
   return (
@@ -66,8 +67,8 @@ const TermsAndConditions = () => {
                 For questions regarding these terms, please contact us:
               </p>
               <ul className="list-disc list-inside space-y-2">
-                <li>Email: info@easymove.co.uk</li>
-                <li>Phone: 0800 123 4567</li>
+                <li>Email: <a href={`mailto:${config.email}`} className="hover:underline hover:text-primary">{config.email}</a></li>
+                <li>Phone: <a href={`tel:${config.email}`} className="hover:underline hover:text-primary">{config.phoneNumber}</a></li>
               </ul>
             </div>
           </div>

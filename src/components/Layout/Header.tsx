@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from '@/components/ui/button';
 import {Menu, X, Phone, Mail} from 'lucide-react';
+import { config } from '../../../config';
 
 const Header = () => {
   const location = usePathname();
@@ -28,14 +29,14 @@ const Header = () => {
       <div className="bg-primary text-primary-foreground py-2">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
+            <a href={`tel:${config.phoneNumber}`} className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              <span> 08001234567</span>
-            </div>
-            <div className="flex items-center gap-2">
+              <span>{config.phoneNumber}</span>
+            </a>
+            <a href={`mailto:${config.email}`} className="flex items-center gap-2">
               <Mail className="hidden sm:flex h-4 w-4" />
-              <span>info@easymove.co.uk</span>
-            </div>
+              <span>{config.email}</span>
+            </a>
           </div>
           <div className="hidden md:block">
             <span>Free Quotes • Professional Service • Fully Insured</span>
@@ -76,14 +77,14 @@ const Header = () => {
 
           {/* CTA Button & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            <a href="tel:08001234567">
-              <Button variant="outline" className="hidden lg:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <a href={`tel:${config.phoneNumber}`}>
+              <Button variant="outline" className="hidden lg:flex hover:cursor-pointer border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 <Phone className="h-4 w-4 mr-2" />
                 Call Now
               </Button>
             </a>
             <Link href="/contact">
-              <Button className="hidden md:flex bg-cta-gradient hover:opacity-90 shadow-button-custom">
+              <Button className="hidden md:flex bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom">
                 Get Free Quote
               </Button>
             </Link>

@@ -11,6 +11,7 @@ import {
   Phone 
 } from 'lucide-react';
 import Link from 'next/link';
+import { config } from '../../../config';
 
 const Services = () => {
   const services = [
@@ -60,7 +61,7 @@ const Services = () => {
           <Link href="/contact">
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-button-custom animate-scale-in"
+              className="bg-accent hover:cursor-pointer hover:bg-accent/90 text-accent-foreground shadow-button-custom animate-scale-in"
             >
               Get Your Free Quote
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -104,17 +105,16 @@ const Services = () => {
 
                       <div className="flex flex-col sm:flex-row gap-3">
                         <Link href="/contact" className="flex justify-center">
-                          <Button className="bg-cta-gradient hover:opacity-90 shadow-button-custom flex-1">
+                          <Button className="bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom flex-1">
                             Get Quote for This Service
                           </Button>
                         </Link>
                         <Button 
                           variant="outline" 
-                          className="flex-1"
-                          // onClick={() => alert('Call us now: 08001234567')}
+                          className="flex-1 hover:cursor-pointer"
                         >
                           <Phone className="mr-2 h-4 w-4" />
-                          08001234567
+                          {config.phoneNumber}
                         </Button>
                       </div>
                     </div>
@@ -192,19 +192,21 @@ const Services = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="flex justify-center">
-                <Button size="lg" className="bg-cta-gradient hover:opacity-90 shadow-button-custom  flex-1">
+                <Button size="lg" className="bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom  flex-1">
                   Free Quote Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
+              <a href={`tel:${config.phoneNumber}`} className="flex justify-center">
                 <Button 
                   size="lg" 
                   variant="outline"
-                  // onClick={() => alert('Call us now: 08001234567')}
+                  className="hover:cursor-pointer"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  08001234567
+                  {config.phoneNumber}
                 </Button>
+              </a>
             </div>
           </div>
         </div>

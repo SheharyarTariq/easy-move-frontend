@@ -165,7 +165,7 @@ const ServicesSection = () => {
                 <Link href="/contact" >
                   <Button 
                     variant="outline" 
-                    className="w-full border-primary/20 hover:bg-primary hover:text-primary-foreground transition-all"
+                    className="w-full border-primary/20 hover:cursor-pointer hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     Get Quote
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -188,12 +188,12 @@ const ServicesSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="flex justify-center">
-                <Button className="bg-cta-gradient hover:opacity-90 shadow-button-custom flex-1">
+                <Button className="bg-cta-gradient hover:opacity-90 hover:cursor-pointer shadow-button-custom flex-1">
                   Contact Us Today
                 </Button>
               </Link>
-              <Link href="/services" className="flex justify-center">
-                <Button variant="outline" className="flex-1">
+              <Link href="/services" className="flex justify-center ">
+                <Button variant="outline" className="flex-1 hover:cursor-pointer">
                   View All Services
                 </Button>
               </Link>

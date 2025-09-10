@@ -1,9 +1,10 @@
 'use client'
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 import LocationMap from '@/components/Map/LocationMap';
 import GetQuote from '@/components/common/get-quote';
+import { config } from '../../../config';
 
 const Contact = () => {
 
@@ -38,7 +39,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary mb-1">Phone</h3>
-                    <p className="text-lg font-medium">08001234567</p>
+                    <a href={`tel:${config.phoneNumber}`} className="text-lg font-medium">
+                      {config.phoneNumber}
+                    </a>
                     <p className="text-sm text-muted-foreground">Free calls from UK landlines and mobiles</p>
                   </div>
                 </div>
@@ -50,7 +53,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary mb-1">Email</h3>
-                    <p className="text-lg font-medium">info@easymove.co.uk</p>
+                    <a href={`mailto:${config.email}`} className="text-lg font-medium">{config.email}</a>
                     <p className="text-sm text-muted-foreground">We&apos;ll respond within 2 hours</p>
                   </div>
                 </div>
@@ -62,7 +65,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary mb-1">Head Office</h3>
-                    <p className="text-lg font-medium">Epsom, Surrey</p>
+                    <p className="text-lg font-medium">Hayes, West London at 13 Coronation Road</p>
                     <p className="text-muted-foreground">Serving London and surrounding areas</p>
                   </div>
                 </div>
@@ -91,13 +94,15 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold">Need Immediate Help?</h3>
                 </div>
                 <p className="mb-4">Call us now for urgent moving requirements or emergency assistance.</p>
-                <Button 
-                  variant="outline" 
-                  className="border-white/30 text-white hover:bg-white hover:text-primary text-primary"
-                >
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call Now: 08001234567
-                </Button>
+                <a href={`tel:${config.phoneNumber}`}>
+                  <Button 
+                    variant="outline" 
+                    className="border-white/30 hover:cursor-pointer hover:bg-white hover:text-primary text-primary"
+                  >
+                    <Phone className="mr-2 h-4 w-4" />
+                    Call Now: {config.phoneNumber}
+                  </Button>
+                </a>
               </div>
             </div>
 

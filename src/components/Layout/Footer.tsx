@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { config } from '../../../config';
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
 
 const Footer = () => {
@@ -60,27 +61,32 @@ const Footer = () => {
           <div className="hidden md:flex md:flex-col ">
             <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-3">
+              <a href={`tel:${config.phoneNumber}`} className="flex hover:cursor-pointer items-start space-x-3">
                 <Phone className="h-4 w-4 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">0800 123 4567</p>
+                  <p className="font-medium">{config.phoneNumber}</p>
                   <p className="opacity-75">Free consultation</p>
                 </div>
-              </div>
-              <div className="flex items-start space-x-3">
+              </a>
+              <a href={`mailto:${config.email}`} className="flex items-start space-x-3">
                 <Mail className="h-4 w-4 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">info@easymove.co.uk</p>
+                  <p className="font-medium">{config.email}</p>
                   <p className="opacity-75">24/7 support</p>
                 </div>
-              </div>
-              <div className="flex items-start space-x-3">
+              </a>
+              <a
+                href={config.googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-3"
+              >
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">London, UK</p>
+                  <p className="font-medium">West London, UK</p>
                   <p className="opacity-75">Nationwide coverage</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
