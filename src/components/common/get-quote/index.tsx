@@ -7,20 +7,20 @@ import Spinner from '../spinner';
 import toast from 'react-hot-toast';
 
 const validationSchema = yup.object({
-  // firstName: yup.string().required('First name is required'),
-  // lastName: yup.string().required('Last name is required'),
-  // email: yup.string().email('Invalid email').required('Email is required'),
-  // telephone: yup.string().required('Telephone is required'),
-  // jobType: yup.string().oneOf(['single', 'double']).required('Job type is required'),
-  // pickupHouseNumber: yup.string().required('House number is required'),
-  // pickupStreetName: yup.string().required('Street name is required'),
-  // pickupPostcode: yup.string().required('Postcode is required'),
-  // pickupPhoneNumber: yup.string().required('Phone number is required'),
-  // pickupDisassembling: yup.boolean(),
-  // dropoffHouseNumber: yup.string().required('House number is required'),
-  // dropoffStreetName: yup.string().required('Street name is required'),
-  // dropoffPostcode: yup.string().required('Postcode is required'),
-  // dropoffPhoneNumber: yup.string().required('Phone number is required'),
+  firstName: yup.string().required('First name is required'),
+  lastName: yup.string().required('Last name is required'),
+  email: yup.string().email('Invalid email').required('Email is required'),
+  telephone: yup.string().required('Telephone is required'),
+  jobType: yup.string().oneOf(['single', 'double']).required('Job type is required'),
+  pickupHouseNumber: yup.string().required('House number is required'),
+  pickupStreetName: yup.string().required('Street name is required'),
+  pickupPostcode: yup.string().required('Postcode is required'),
+  pickupPhoneNumber: yup.string().required('Phone number is required'),
+  pickupDisassembling: yup.boolean(),
+  dropoffHouseNumber: yup.string().required('House number is required'),
+  dropoffStreetName: yup.string().required('Street name is required'),
+  dropoffPostcode: yup.string().required('Postcode is required'),
+  dropoffPhoneNumber: yup.string().required('Phone number is required'),
   dropoffAssembling: yup.boolean(),
   secondDropoffHouseNumber: yup.string().when('jobType', {
     is: 'double',
@@ -284,7 +284,7 @@ const GetQuote = () => {
 
       {/* Drop-off Address Section */}
       <div className="space-y-4">
-        <h4 className="text-lg font-semibold text-foreground">First Drop-off Address</h4>
+        <h4 className="text-lg font-semibold text-foreground">Drop-off Address</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <InputField
             label="House Number"
