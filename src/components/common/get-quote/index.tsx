@@ -3,22 +3,24 @@ import * as yup from 'yup';
 import InputField from '../input-field';
 import { Button } from '@/components/ui/button';
 import { Send } from 'lucide-react';
+import Spinner from '../spinner';
+import toast from 'react-hot-toast';
 
 const validationSchema = yup.object({
-  firstName: yup.string(),//.required('First name is required'),
-  lastName: yup.string(),//.required('Last name is required'),
-  email: yup.string(),//.email('Invalid email').required('Email is required'),
-  telephone: yup.string(),//.required('Telephone is required'),
-  jobType: yup.string().oneOf(['single', 'double']),//.required('Job type is required'),
-  pickupHouseNumber: yup.string(),//.required('House number is required'),
-  pickupStreetName: yup.string(),//.required('Street name is required'),
-  pickupPostcode: yup.string(),//.required('Postcode is required'),
-  pickupPhoneNumber: yup.string(),//.required('Phone number is required'),
+  firstName: yup.string().required('First name is required'),
+  lastName: yup.string().required('Last name is required'),
+  email: yup.string().email('Invalid email').required('Email is required'),
+  telephone: yup.string().required('Telephone is required'),
+  jobType: yup.string().oneOf(['single', 'double']).required('Job type is required'),
+  pickupHouseNumber: yup.string().required('House number is required'),
+  pickupStreetName: yup.string().required('Street name is required'),
+  pickupPostcode: yup.string().required('Postcode is required'),
+  pickupPhoneNumber: yup.string().required('Phone number is required'),
   pickupDisassembling: yup.boolean(),
-  dropoffHouseNumber: yup.string(),//.required('House number is required'),
-  dropoffStreetName: yup.string(),//.required('Street name is required'),
-  dropoffPostcode: yup.string(),//.required('Postcode is required'),
-  dropoffPhoneNumber: yup.string(),//.required('Phone number is required'),
+  dropoffHouseNumber: yup.string().required('House number is required'),
+  dropoffStreetName: yup.string().required('Street name is required'),
+  dropoffPostcode: yup.string().required('Postcode is required'),
+  dropoffPhoneNumber: yup.string().required('Phone number is required'),
   dropoffAssembling: yup.boolean(),
   secondDropoffHouseNumber: yup.string().when('jobType', {
     is: 'double',
@@ -70,7 +72,7 @@ const GetQuote = () => {
     packagingRequired: false,
     additionalNotes: ''
   });
-
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -97,7 +99,7 @@ const GetQuote = () => {
   try {
     await validationSchema.validate(formData, { abortEarly: false });
     setErrors({});
-    
+    setLoading(true);
     const res = await fetch("/api/send-quote", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -105,7 +107,7 @@ const GetQuote = () => {
     });
 
     if (res.ok) {
-      alert("Form submitted! The business owner will receive your request as a PDF.");
+      toast.success("Request for quote sent successfully!");
       setFormData({
         firstName: '',
         lastName: '',
@@ -132,7 +134,8 @@ const GetQuote = () => {
       });
     } else {
       const { error } = await res.json();
-      alert("Error sending email: " + error);
+      console.log(error);
+      toast.error("Something went wrong. Please try again");
     }
   } catch (error) {
     if (error instanceof yup.ValidationError) {
@@ -142,8 +145,10 @@ const GetQuote = () => {
       });
       setErrors(validationErrors);
     } else {
-      alert("Unexpected error submitting form.");
+      toast.error("Unexpected error submitting form.");
     }
+  }finally{
+    setLoading(false);
   }
 };
 
@@ -156,7 +161,6 @@ const GetQuote = () => {
           value={formData.firstName}
           onChange={handleInputChange}
           placeholder="Your first name"
-          // required
           error={errors.firstName}
         />
         <InputField
@@ -165,10 +169,8 @@ const GetQuote = () => {
           value={formData.lastName}
           onChange={handleInputChange}
           placeholder="Your last name"
-          // required
           error={errors.lastName}
         />
-
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -179,7 +181,6 @@ const GetQuote = () => {
           value={formData.email}
           onChange={handleInputChange}
           placeholder="your.email@example.com"
-          // required
           error={errors.email}
         />
         <InputField
@@ -189,7 +190,6 @@ const GetQuote = () => {
           value={formData.telephone}
           onChange={handleInputChange}
           placeholder="Your phone number"
-          // required
           error={errors.telephone}
         />
       </div>
@@ -222,7 +222,6 @@ const GetQuote = () => {
             value={formData.pickupHouseNumber}
             onChange={handleInputChange}
             placeholder="House number"
-            // required
             error={errors.pickupHouseNumber}
           />
           <InputField
@@ -231,7 +230,6 @@ const GetQuote = () => {
             value={formData.pickupStreetName}
             onChange={handleInputChange}
             placeholder="Street name"
-            // required
             error={errors.pickupStreetName}
           />
         </div>
@@ -243,7 +241,6 @@ const GetQuote = () => {
             value={formData.pickupPostcode}
             onChange={handleInputChange}
             placeholder="Postcode"
-            // required
             error={errors.pickupPostcode}
           />
           <InputField
@@ -253,7 +250,6 @@ const GetQuote = () => {
             value={formData.pickupPhoneNumber}
           onChange={handleInputChange}
             placeholder="Phone number"
-            // required
             error={errors.pickupPhoneNumber}
           />
         </div>
@@ -288,7 +284,7 @@ const GetQuote = () => {
 
       {/* Drop-off Address Section */}
       <div className="space-y-4">
-        <h4 className="text-lg font-semibold text-foreground">First Drop-off Address</h4>
+        <h4 className="text-lg font-semibold text-foreground">Drop-off Address</h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <InputField
             label="House Number"
@@ -305,7 +301,6 @@ const GetQuote = () => {
             value={formData.dropoffStreetName}
             onChange={handleInputChange}
             placeholder="Street name"
-            // required
             error={errors.dropoffStreetName}
           />
         </div>
@@ -317,7 +312,6 @@ const GetQuote = () => {
             value={formData.dropoffPostcode}
             onChange={handleInputChange}
             placeholder="Postcode"
-            // required
             error={errors.dropoffPostcode}
           />
           <InputField
@@ -327,7 +321,6 @@ const GetQuote = () => {
             value={formData.dropoffPhoneNumber}
             onChange={handleInputChange}
             placeholder="Phone number"
-            // required
             error={errors.dropoffPhoneNumber}
           />
           
@@ -367,7 +360,6 @@ const GetQuote = () => {
                 value={formData.secondDropoffHouseNumber}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-0 focus:border-primary transition-all"
-                // required
               />
               {errors.secondDropoffHouseNumber && <p className="text-destructive text-sm mt-1">{errors.secondDropoffHouseNumber}</p>}
             </div>
@@ -382,7 +374,6 @@ const GetQuote = () => {
                 value={formData.secondDropoffStreetName}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-0 focus:border-primary transition-all"
-                // required
               />
               {errors.secondDropoffStreetName && <p className="text-destructive text-sm mt-1">{errors.secondDropoffStreetName}</p>}
             </div>
@@ -399,7 +390,6 @@ const GetQuote = () => {
                 value={formData.secondDropoffPostcode}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-0 focus:border-primary transition-all"
-                // required
               />
               {errors.secondDropoffPostcode && <p className="text-destructive text-sm mt-1">{errors.secondDropoffPostcode}</p>}
             </div>
@@ -414,7 +404,6 @@ const GetQuote = () => {
                 value={formData.secondDropoffPhoneNumber}
                 onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-input rounded-lg focus:outline-none focus:ring-0 focus:border-primary transition-all"
-                // required
               />
               {errors.secondDropoffPhoneNumber && <p className="text-destructive text-sm mt-1">{errors.secondDropoffPhoneNumber}</p>}
             </div>
@@ -434,16 +423,6 @@ const GetQuote = () => {
                 />
                 <span className="text-sm">Assembling required</span>
               </label>
-              {/* <label className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  name="secondDropoffDisassembling"
-                  checked={formData.secondDropoffDisassembling}
-                  onChange={handleInputChange}
-                  className="rounded border-input focus:outline-none focus:ring-0"
-                />
-                <span className="text-sm">Disassembling required</span>
-              </label> */}
             </div>
           </div>
         </div>
@@ -469,7 +448,10 @@ const GetQuote = () => {
         className="w-full bg-cta-gradient hover:opacity-90 shadow-button-custom text-lg py-6"
       >
         Get My Free Quote
-        <Send className="ml-2 h-5 w-5" />
+        {loading ?
+          <Spinner/> : 
+          <Send className="ml-2 h-5 w-5" />
+        }
       </Button>
     </form>
   )

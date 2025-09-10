@@ -4,6 +4,7 @@ import "./globals.css";
 import { ScrollToTop } from "@/components/common/scroll-to-top";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
         <div className="min-h-screen bg-background">
           <Header />
           {children}
+          <Toaster position="top-right" reverseOrder={false} />
           <Footer/>
         </div>
       </body>
