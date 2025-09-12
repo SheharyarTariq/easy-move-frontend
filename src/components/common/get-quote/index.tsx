@@ -11,6 +11,7 @@ const validationSchema = yup.object({
   lastName: yup.string().required('Last name is required'),
   email: yup.string().email('Invalid email').required('Email is required'),
   telephone: yup.string().required('Telephone is required'),
+  whatsappNumber: yup.string(),
   jobType: yup.string().oneOf(['single', 'double']).required('Job type is required'),
   pickupHouseNumber: yup.string().required('House number is required'),
   pickupStreetName: yup.string().required('Street name is required'),
@@ -53,6 +54,7 @@ const GetQuote = () => {
     lastName: '',
     email: '',
     telephone: '',
+    whatsappNumber: '',
     jobType: 'single',
     pickupHouseNumber: '',
     pickupStreetName: '',
@@ -113,6 +115,7 @@ const GetQuote = () => {
         lastName: '',
         email: '',
         telephone: '',
+        whatsappNumber: '',
         jobType: 'single',
         pickupHouseNumber: '',
         pickupStreetName: '',
@@ -193,7 +196,15 @@ const GetQuote = () => {
           error={errors.telephone}
         />
       </div>
-
+        <InputField
+          label="WhatsApp Number"
+          name="whatsappNumber"
+          type="tel"
+          value={formData.whatsappNumber}
+          onChange={handleInputChange}
+          placeholder="Your WhatsApp number"
+          error={errors.whatsappNumber}
+        />
 
       {/* Job Type Selection */}
       <div>
