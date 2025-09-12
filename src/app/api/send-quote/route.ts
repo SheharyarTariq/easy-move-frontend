@@ -3,6 +3,7 @@ import PDFDocument from "pdfkit";
 import nodemailer from "nodemailer";
 import path from "path";
 import fs from "fs";
+// import fetch from "node-fetch";
 
 // Pre-load the font to avoid filesystem access during request processing.
 // This is more robust for serverless environments where the file system is not guaranteed.
@@ -76,6 +77,7 @@ export async function POST(req: Request) {
       drawField("lastName", formData.lastName);
       drawField("email", formData.email);
       drawField("telephone", formData.telephone);
+      drawField("whatsappNumber", formData.whatsappNumber);
       doc.moveDown();
     
       drawSectionHeader("Job Type");
@@ -111,6 +113,7 @@ export async function POST(req: Request) {
 
       drawSectionHeader("Additional Notes");
       drawField("additionalNotes", formData.additionalNotes);
+
 
       doc.end();
     });
@@ -166,7 +169,7 @@ EasyMove Website System`,
           },
         ],
     });
-
+    // sendWhatsAppMessage(formData.telephone)
     return NextResponse.json({ ok: true });
   } catch (err: unknown) {
     console.error("Error in send-quote route:", err);
@@ -176,3 +179,31 @@ EasyMove Website System`,
     );
   }
 }
+
+// export async function sendWhatsAppMessage(phoneNumber: number|string) {
+//   const token = process.env.WHATSAPP_TOKEN; // Your permanent access token
+//   const phoneNumberId = process.env.PHONE_NUMBER_ID; // From WhatsApp Business setup
+
+//   const response = await fetch(
+//     `https://graph.facebook.com/v20.0/${phoneNumberId}/messages`,
+//     {
+//       method: "POST",
+//       headers: {
+//         "Authorization": `Bearer ${token}`,
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify({
+//         messaging_product: "whatsapp",
+//         to: phoneNumber, // User’s number with country code
+//         type: "template",
+//         template: {
+//           name: "hello_world", // pre-approved template name
+//           language: { code: "en_US" }
+//         }
+//       })
+//     }
+//   );
+
+//   const data = await response.json();
+//   console.log("WhatsApp API response:", data);
+// }
