@@ -214,3 +214,30 @@
     max-width: 1400px;
   }
 }
+
+.react-international-phone-input-container .react-international-phone-input {
+  height: 50px !important;
+  width: 100% !important;
+  border-radius: 0 10px 10px 0 !important;
+  border: 1px solid #d3d3d3 !important; /* default gray */
+  background-color: transparent !important;
+  outline: none !important;
+}
+
+.react-international-phone-country-selector-button {
+  height: 50px !important;
+  padding: 0 8px !important;
+  border-radius: 10px 0 0 10px !important;
+  border: 1px solid #d3d3d3 !important; /* default gray */
+  background-color: transparent !important;
+  outline: none !important;
+}
+
+/* when either input OR button is focused */
+.react-international-phone-input-container:focus-within 
+  .react-international-phone-input,
+.react-international-phone-input-container:focus-within 
+  .react-international-phone-country-selector-button {
+  border-color: var(--color-primary) !important;
+}
+

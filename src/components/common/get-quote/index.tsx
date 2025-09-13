@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Send } from 'lucide-react';
 import Spinner from '../spinner';
 import toast from 'react-hot-toast';
+import PhoneNumberInput from '../phone-number-input';
 
 const validationSchema = yup.object({
   firstName: yup.string().required('First name is required'),
@@ -147,6 +148,7 @@ const GetQuote = () => {
         if (err.path) validationErrors[err.path] = err.message;
       });
       setErrors(validationErrors);
+      toast.error("Please fix the highlighted issue");
     } else {
       toast.error("Unexpected error submitting form.");
     }
@@ -154,6 +156,17 @@ const GetQuote = () => {
     setLoading(false);
   }
 };
+
+  const handlePhoneChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, whatsappNumber: value }));
+    if (errors['whatsappNumber']) {
+      setErrors((prevErrors) => {
+        const updatedErrors = { ...prevErrors };
+        delete updatedErrors['whatsappNumber'];
+        return updatedErrors;
+      });
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -196,16 +209,11 @@ const GetQuote = () => {
           error={errors.telephone}
         />
       </div>
-        <InputField
-          label="WhatsApp Number"
-          name="whatsappNumber"
-          type="tel"
-          value={formData.whatsappNumber}
-          onChange={handleInputChange}
-          placeholder="Your WhatsApp number"
-          error={errors.whatsappNumber}
-        />
-
+          <div className="flex flex-col w-full col-span-2 sm:col-span-1">
+            <label htmlFor="phone" className="font-Poppins font-normal text-base text-LightGray mb-2">Whatsapp Number</label>
+            <PhoneNumberInput phoneNumber={formData.whatsappNumber} onChange={handlePhoneChange}/>
+            {errors.whatsappNumber && (<p className="text-red-500 text-xs mt-1">{errors.whatsappNumber}</p>)}
+          </div>
       {/* Job Type Selection */}
       <div>
         <label className="block text-sm font-medium text-foreground mb-2">
