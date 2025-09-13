@@ -12,7 +12,7 @@ const validationSchema = yup.object({
   lastName: yup.string().required('Last name is required'),
   email: yup.string().email('Invalid email').required('Email is required'),
   telephone: yup.string().required('Telephone is required'),
-  whatsappNumber: yup.string(),
+  whatsappNumber: yup.string().required("required"),
   jobType: yup.string().oneOf(['single', 'double']).required('Job type is required'),
   pickupHouseNumber: yup.string().required('House number is required'),
   pickupStreetName: yup.string().required('Street name is required'),
@@ -157,17 +157,16 @@ const GetQuote = () => {
   }
 };
 
-  const handlePhoneChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, whatsappNumber: value }));
-    if (errors['whatsappNumber']) {
+  const handlePhoneInputChange = (name: string) => (value: string) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
       setErrors((prevErrors) => {
         const updatedErrors = { ...prevErrors };
-        delete updatedErrors['whatsappNumber'];
+        delete updatedErrors[name];
         return updatedErrors;
       });
     }
   };
-
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -199,21 +198,19 @@ const GetQuote = () => {
           placeholder="your.email@example.com"
           error={errors.email}
         />
-        <InputField
-          label="Telephone"
-          name="telephone"
-          type="tel"
-          value={formData.telephone}
-          onChange={handleInputChange}
-          placeholder="Your phone number"
-          error={errors.telephone}
-        />
+        <div>
+          <label className="block text-sm font-medium text-foreground mb-2">Telephone *</label>
+          <PhoneNumberInput phoneNumber={formData.telephone} onChange={handlePhoneInputChange('telephone')}/>
+          {errors.telephone && (<p className="text-destructive text-sm mt-1">{errors.telephone}</p>)}
+        </div>
       </div>
-          <div className="flex flex-col w-full col-span-2 sm:col-span-1">
-            <label htmlFor="phone" className="font-Poppins font-normal text-base text-LightGray mb-2">Whatsapp Number</label>
-            <PhoneNumberInput phoneNumber={formData.whatsappNumber} onChange={handlePhoneChange}/>
-            {errors.whatsappNumber && (<p className="text-red-500 text-xs mt-1">{errors.whatsappNumber}</p>)}
-          </div>
+      <div>
+        <label className="block text-sm font-medium text-foreground mb-2">
+          Whatsapp Number *
+        </label>
+        <PhoneNumberInput phoneNumber={formData.whatsappNumber} onChange={handlePhoneInputChange('whatsappNumber')}/>
+        {errors.whatsappNumber && (<p className="text-destructive text-sm mt-1">{errors.whatsappNumber}</p>)}
+      </div>
       {/* Job Type Selection */}
       <div>
         <label className="block text-sm font-medium text-foreground mb-2">
@@ -262,15 +259,13 @@ const GetQuote = () => {
             placeholder="Postcode"
             error={errors.pickupPostcode}
           />
-          <InputField
-            label="Phone Number"
-            name="pickupPhoneNumber"
-            type="tel"
-            value={formData.pickupPhoneNumber}
-          onChange={handleInputChange}
-            placeholder="Phone number"
-            error={errors.pickupPhoneNumber}
-          />
+          <div>
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Phone Number *
+            </label>
+            <PhoneNumberInput phoneNumber={formData.pickupPhoneNumber} onChange={handlePhoneInputChange('pickupPhoneNumber')}/>
+            {errors.pickupPhoneNumber && (<p className="text-destructive text-sm mt-1">{errors.pickupPhoneNumber}</p>)}
+          </div>
         </div>
         
         {/* Pickup Services */}
@@ -333,15 +328,13 @@ const GetQuote = () => {
             placeholder="Postcode"
             error={errors.dropoffPostcode}
           />
-          <InputField
-            label="Phone Number"
-            name="dropoffPhoneNumber"
-            type="tel"
-            value={formData.dropoffPhoneNumber}
-            onChange={handleInputChange}
-            placeholder="Phone number"
-            error={errors.dropoffPhoneNumber}
-          />
+          <div>
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Phone Number *
+            </label>
+            <PhoneNumberInput phoneNumber={formData.dropoffPhoneNumber} onChange={handlePhoneInputChange('dropoffPhoneNumber')}/>
+            {errors.dropoffPhoneNumber && (<p className="text-destructive text-sm mt-1">{errors.dropoffPhoneNumber}</p>)}
+          </div>
           
         </div>
         
