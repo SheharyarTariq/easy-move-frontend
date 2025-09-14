@@ -18,7 +18,7 @@ try {
 // Pre-load the logo to avoid filesystem access during request processing.
 let logoBuffer: Buffer | undefined;
 try {
-  const logoPath = path.join(process.cwd(), "public", "assets", "logo.png");
+  const logoPath = path.join(process.cwd(), "public", "assets", "blueLogo.png");
   logoBuffer = fs.readFileSync(logoPath);
 } catch (e) {
   console.error("Could not pre-load logo. PDF will be generated without it.", e);

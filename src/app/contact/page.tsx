@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 import LocationMap from '@/components/Map/LocationMap';
 import GetQuote from '@/components/common/get-quote';
 import { config } from '../../../config';
