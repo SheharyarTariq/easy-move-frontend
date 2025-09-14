@@ -58,7 +58,7 @@ export async function POST(req: Request) {
         doc.font("Times-Roman");
       }
       
-      doc.fontSize(20).text("Moving Quote Request", { align: "center" }).moveDown(3);
+      doc.fontSize(20).text("Moving Quote Request", { align: "center" }).moveDown(0);
       doc.moveDown();
 
       const drawSectionHeader = (title: string) => {
@@ -132,7 +132,7 @@ export async function POST(req: Request) {
       from: process.env.FROM_EMAIL,
       to: process.env.OWNER_EMAIL,
       subject: "New Moving Quote Request",
-      text: `Hello EasyMove,
+      text: `Hello GalaxyRemovals,
 
 A new quote request has been submitted through your website.
 Please find the full details in the attached PDF.
@@ -145,9 +145,9 @@ This request includes:
 Kindly review the attachment and follow up with the client to provide a tailored quote.
 
 Best regards,
-EasyMove Website System`,
+GalaxyRemovals Website System`,
   html: `
-    <p>Hello <b>EasyMove</b>,</p>
+    <p>Hello <b>GalaxyRemovals</b>,</p>
     <p>A new <b>quote request</b> has been submitted through your website.<br/>
     Please find the full details in the attached PDF.</p>
 
@@ -159,7 +159,7 @@ EasyMove Website System`,
     </ul>
 
     <p>Kindly review the attachment and follow up with the client to provide a tailored quote.</p>
-    <p>Best regards,<br/>EasyMove Website System</p>
+    <p>Best regards,<br/>GalaxyRemovals Website System</p>
   `,
         attachments: [
           {
