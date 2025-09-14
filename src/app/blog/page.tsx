@@ -6,7 +6,6 @@ import { Calendar, User, ArrowRight, Clock, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { blogPosts, featuredPost, BlogPost } from './blog-posts';
-import Map from '@/components/common/map';
 import { config } from '../../../config';
 
 const Blog = () => {
@@ -226,12 +225,12 @@ const BlogCard = ({ post, index }: { post: BlogPost, index: number }) => (
     className="bg-card rounded-xl shadow-card-custom border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-scale-in group overflow-hidden"
     style={{ animationDelay: `${index * 0.1}s` }}
   >
-    <div className="relative w-full h-48 object-cover ">
+    <div className="relative w-full h-48 object-cover">
       <Image
         src={post.image} 
         alt={post.title}
         fill
-        className="transition-transform duration-300 group-hover:scale-105"
+        className="transition-transform  duration-300 group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </div>
