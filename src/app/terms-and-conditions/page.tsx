@@ -20,7 +20,7 @@ const TermsAndConditions = () => {
             <div>
               <h2 className="text-section text-primary mb-4">Services</h2>
               <p className="mb-4">
-                EasyMove provides professional moving and removal services including:
+                GalaxyRemovals provides professional moving and removal services including:
               </p>
               <ul className="list-disc list-inside space-y-2 mb-4">
                 <li>Residential moving services</li>
@@ -47,7 +47,7 @@ const TermsAndConditions = () => {
             <div>
               <h2 className="text-section text-primary mb-4">Liability</h2>
               <p className="mb-4">
-                EasyMove is fully insured and takes responsibility for damages caused by 
+                GalaxyRemovals is fully insured and takes responsibility for damages caused by 
                 our negligence during the moving process, subject to the terms of our 
                 insurance policy.
               </p>

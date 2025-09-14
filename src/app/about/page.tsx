@@ -1,8 +1,6 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
 import { CheckCircle, Users, Award, Shield, Phone } from 'lucide-react';
-import Link from 'next/link';
-import { config } from '../../../config';
+import Map from '@/components/common/map';
 
 const About = () => {
   return (      
@@ -11,7 +9,7 @@ const About = () => {
         <section className="bg-hero-gradient text-primary-foreground sm:py-20 py-10">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl sm:text-5xl font-bold sm:font-extrabold mb-6 animate-fade-up">
-              About EasyMove
+              About Galaxy Removals
             </h1>
             <p className="sm:text-xl text-lg  max-w-3xl mx-auto animate-fade-up">
               Professional moving services you can trust. We&apos;ve been helping families 
@@ -28,7 +26,7 @@ const About = () => {
                 <h2 className="text-display text-primary mb-6">Our Story</h2>
                 <div className="prose prose-lg text-muted-foreground space-y-6">
                   <p>
-                    Founded in 2009, EasyMove began with a simple mission: to make moving 
+                    Founded in 2009, GalaxyRemovals began with a simple mission: to make moving 
                     stress-free and affordable for everyone. What started as a small family 
                     business has grown into one of the UK&apos;s most trusted moving companies.
                   </p>
@@ -165,60 +163,10 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="sm:py-20 py-10 bg-secondary/30">
-          <div className="container mx-auto px-4 text-center">
-            <div className="bg-card rounded-2xl sm:p-12 p-6 shadow-hero-custom border border-border max-w-4xl mx-auto">
-              <h2 className="sm:text-4xl text-2xl font-bold text-primary mb-4">
-                Ready to Experience the EasyMove Difference?
-              </h2>
-              <p className="text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Join thousands of satisfied customers who have made their move with confidence. 
-                Get your free quote today and discover why EasyMove is the UK&apos;s trusted moving partner.
-              </p>
-
-<div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
-  <Link href="/contact" className="w-full sm:w-auto">
-    <Button 
-      size="lg" 
-      className="w-full sm:w-auto bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom"
-    >
-      Get Free Quote
-    </Button>
-  </Link>
-
-  <a href={`tel:${config.phoneNumber}`} className="w-full sm:w-auto">
-    <Button 
-      size="lg" 
-      variant="outline"
-      className="w-full sm:w-auto hover:cursor-pointer"
-    >
-      <Phone className="mr-2 h-5 w-5" />
-      Call: {config.phoneNumber}
-    </Button>
-  </a>
-</div>
-
-
-              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="flex justify-center">
-                  <Button size="lg" className="bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom flex-1">
-                    Get Free Quote
-                  </Button>
-                </Link>
-                <a href={`tel:${config.phoneNumber}`}>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="hover:cursor-pointer"
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call: {config.phoneNumber}
-                  </Button>
-                </a>
-              </div> */}
-            </div>
-          </div>
+        <section className="py-12 bg-secondary/30">
+          <Map/>
         </section>
+
       </main>
 
   );

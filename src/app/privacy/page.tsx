@@ -12,7 +12,7 @@ const Privacy = () => {
             <div>
               <h2 className="text-section text-primary mb-4">Information We Collect</h2>
               <p className="mb-4">
-                At EasyMove, we collect information to provide better services to all our users. 
+                At GalaxyRemovals, we collect information to provide better services to all our users. 
                 We collect information in the following ways:
               </p>
               <ul className="list-disc list-inside space-y-2 mb-4">
@@ -38,7 +38,7 @@ const Privacy = () => {
               <h2 className="text-section text-primary mb-4">Information Sharing</h2>
               <p className="mb-4">
                 We do not share personal information with companies, organizations, 
-                or individuals outside of EasyMove except in the following cases:
+                or individuals outside of GalaxyRemovals except in the following cases:
               </p>
               <ul className="list-disc list-inside space-y-2 mb-4">
                 <li>With your consent</li>

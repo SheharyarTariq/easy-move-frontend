@@ -2,9 +2,9 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
-import LocationMap from '@/components/Map/LocationMap';
 import GetQuote from '@/components/common/get-quote';
 import { config } from '../../../config';
+import Map from '@/components/common/map';
 
 const Contact = () => {
 
@@ -104,6 +104,9 @@ const Contact = () => {
                   </Button>
                 </a>
               </div>
+              <section className="py-12">
+                <Map/>
+              </section>
             </div>
 
             {/* Contact Form */}
@@ -121,19 +124,6 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-12 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="bg-card rounded-2xl p-8 shadow-card-custom border border-border">
-            <h3 className="text-section text-primary mb-4 text-center">Find Our Office</h3>
-            <LocationMap />
-            <p className="text-muted-foreground text-center mt-4">
-              Located in Hayes, West London at 13 Coronation Road (UB3 4JS), with easy access to all major transport links. We serve London, Guildford, Reading, Watford, Aylesbury, Redhill, and Heathrow areas.
-            </p>
           </div>
         </div>
       </section>

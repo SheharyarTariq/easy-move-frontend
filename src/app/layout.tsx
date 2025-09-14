@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description: "Galaxy Removals offers professional, reliable, and stress-free moving services for residential and commercial clients. Get your free quote today and experience a seamless relocation.",
   viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
   openGraph: {
-    title: "Easy Move | Your Trusted, Affordable Moving Partner",
+    title: "Galaxy Removals | Your Trusted, Affordable Moving Partner",
     description: "Experience a seamless relocation with our professional moving services.",
     // TODO: Replace with your actual domain for production
     url: config.baseUrl,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: `${config.baseUrl}/assets/darkMiniLogo.png`,
         width: 512,
         height: 512,
-        alt: "Easy Move Logo",
+        alt: "Galaxy Removals Logo",
       },
     ],
     locale: "en_US",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Easy Move | Your Trusted, Affordable Moving Partner",
+    title: "Galaxy Removals | Your Trusted, Affordable Moving Partner",
     description: "Experience a seamless relocation with our professional moving services.",
     images: [`${config.baseUrl}/assets/darkMiniLogo.png`], // TODO: Replace with your actual domain
   },
