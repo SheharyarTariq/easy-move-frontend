@@ -95,7 +95,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-light/20 sm:mt-8 mt-4 sm:pt-8 pt-4 flex flex-col md:flex-row justify-between items-center text-sm">
           <p className="opacity-75">
-            © 2025 EasyMove. All rights reserved.
+            © 2025 GalaxyRemovals. All rights reserved.
           </p>
           <div className="hidden sm:flex space-x-6 sm:mt-4 md:mt-0">
             <Link href="/privacy" className=" opacity-75 hover:opacity-100 transition-opacity">Privacy Policy</Link>

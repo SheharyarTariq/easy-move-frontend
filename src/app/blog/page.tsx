@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Calendar, User, ArrowRight, Clock } from 'lucide-react';
+import { Calendar, User, ArrowRight, Clock, Phone } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { blogPosts, featuredPost, BlogPost } from './blog-posts';
+import Map from '@/components/common/map';
+import { config } from '../../../config';
 
 const Blog = () => {
   const [visiblePosts, setVisiblePosts] = useState(6);
@@ -151,7 +153,7 @@ const Blog = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="sm:py-20 py-10 bg-secondary/30">
+      {/* <section className="sm:py-20 py-10 bg-secondary/30">
         <div className="container mx-auto px-4 text-center">
           <div className="bg-card rounded-2xl p-12 shadow-hero-custom border border-border max-w-2xl mx-auto">
             <h2 className="text-display text-primary mb-4">
@@ -178,7 +180,42 @@ const Blog = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
+              <section className="sm:py-20 py-10 bg-secondary/30">
+          <div className="container mx-auto px-4 text-center">
+            <div className="bg-card rounded-2xl sm:p-12 p-6 shadow-hero-custom border border-border max-w-4xl mx-auto">
+              <h2 className="sm:text-4xl text-2xl font-bold text-primary mb-4">
+                Ready to Experience the GalaxyRemovals Difference?
+              </h2>
+              <p className="text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Join thousands of satisfied customers who have made their move with confidence. 
+                Get your free quote today and discover why GalaxyRemovals is the UK&apos;s trusted moving partner.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom"
+                  >
+                    Get Free Quote
+                  </Button>
+                </Link>
+
+                <a href={`tel:${config.phoneNumber}`} className="w-full sm:w-auto">
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="w-full sm:w-auto hover:cursor-pointer"
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Call: {config.phoneNumber}
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
     </main>
   );
 };
