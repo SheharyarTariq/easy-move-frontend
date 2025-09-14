@@ -241,3 +241,21 @@
   border-color: var(--color-primary) !important;
 }
 
+@layer components {
+  .blog-content {
+    @apply space-y-4 leading-relaxed text-muted-foreground;
+  }
+
+  .blog-content h2 {
+    @apply text-2xl font-bold mt-6 mb-4 text-primary;
+  }
+
+  .blog-content ul {
+    @apply list-disc pl-6 space-y-2;
+  }
+
+  .blog-content li {
+    @apply text-muted-foreground;
+  }
+}
+

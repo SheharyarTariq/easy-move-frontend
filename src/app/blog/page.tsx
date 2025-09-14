@@ -65,22 +65,22 @@ const Blog = () => {
                 </p>
                 
                 <div className="flex items-center sm:justify-between sm:flex-row flex-col">
-                  <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-2">
+                  <div className="flex items-center sm:gap-6 gap-3 text-sm text-muted-foreground">
+                    <div className="flex items-center sm:gap-2 gap-1">
                       <User className="h-4 w-4" />
-                      <span className="text-xs">{featuredPost.author}</span>
+                      <span className="text-xs whitespace-nowrap">{featuredPost.author}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Calendar className="h-4 w-4" />
-                      <span className="text-xs">{featuredPost.date}</span>
+                      <span className="text-xs whitespace-nowrap">{featuredPost.date}</span>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center sm:gap-2 gap-1">
                       <Clock className="h-4 w-4" />
-                      <span className="text-xs">{featuredPost.readTime}</span>
+                      <span className="text-xs truncate">{featuredPost.readTime}</span>
                     </div>
                   </div>
                   <Link href={`/blog/${featuredPost.slug}`}>
-                    <Button className="sm:mt-0 mt-1 bg-cta-gradient hover:opacity-90 shadow-button-custom">
+                    <Button className="sm:mt-0 mt-1 bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom">
                       Read Article
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -220,12 +220,12 @@ const BlogCard = ({ post, index }: { post: BlogPost, index: number }) => (
             <User className="h-3 w-3" />
             <span className="font-medium">{post.author}</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 mr-1">
             <Clock className="h-3 w-3" />
-            <span>{post.readTime}</span>
+            <span className="whitespace-nowrap">{post.readTime}</span>
           </div>
         </div>
-        <span className="text-xs text-muted-foreground">{post.date}</span>
+        <span className="text-xs text-muted-foreground truncate">{post.date}</span>
       </div>
       
       <div className="flex items-center justify-between">
@@ -233,7 +233,7 @@ const BlogCard = ({ post, index }: { post: BlogPost, index: number }) => (
           <Button 
             variant="ghost" 
             size="sm" 
-            className="text-primary hover:text-primary/80 hover:bg-primary/5 transition-all duration-200 font-semibold"
+            className="text-primary hover:cursor-pointer hover:text-primary/80 hover:bg-primary/5 transition-all duration-200 font-semibold"
           >
             Read Full Article
             <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
