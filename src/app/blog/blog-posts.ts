@@ -1,6 +1,17 @@
-import blogFeatured from '../../../public/assets/blog-featured.jpg';
-import blogFragile from '../../../public/assets/blog-fragile.jpg';
-import blogPets from '../../../public/assets/blog-pets.jpg';
+import featured from '../../../public/assets/blog-posts/featured.jpeg';
+import downsize from '../../../public/assets/blog-posts/blog-featured.jpeg';
+import labeled from '../../../public/assets/blog-posts/labeled.jpeg';
+import ecoFriendly from '../../../public/assets/blog-posts/eco-friendly.jpeg';
+import fragile from '../../../public/assets/blog-posts/fragile.jpeg';
+import survivalKit from '../../../public/assets/blog-posts/survivalKit.jpeg';
+import pets from '../../../public/assets/blog-posts/pets.jpeg';
+import storage from '../../../public/assets/blog-posts/storage.jpeg';
+import office from '../../../public/assets/blog-posts/office.jpeg';
+import cost from '../../../public/assets/blog-posts/cost.jpeg';
+import insurance from '../../../public/assets/blog-posts/insurance.jpeg';
+import longDistance from '../../../public/assets/blog-posts/longDistance.jpeg';
+import packingPro from '../../../public/assets/blog-posts/packingPro.jpeg';
+
 import { StaticImageData } from 'next/image';
 
 export interface BlogPost {
@@ -23,7 +34,7 @@ export const featuredPost: BlogPost = {
   date: "2024-03-15",
   readTime: "8 min read",
   category: "Moving Tips",
-  image: blogFeatured,
+  image: featured,
   content: `
     <p>A well-planned moving checklist can turn a stressful relocation into a smooth and organized experience. By preparing in advance, you’ll save time, avoid last-minute chaos, and ensure that every detail is covered. Whether you’re planning a local move, long-distance relocation, or office transition, this 8-week timeline will guide you step by step.</p>
 
@@ -83,7 +94,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-04-05",
   readTime: "7 min read",
   category: "Moving Tips",
-  image: blogPets,
+  image: downsize,
   content: `
     <p>Downsizing your home can feel overwhelming, but it’s also an opportunity to simplify your life, save money, and start fresh in your new space. Whether you’re moving to a smaller apartment, relocating to a retirement community, or just aiming to live more minimally, this guide will walk you through the process step by step.</p>
 
@@ -137,7 +148,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-04-02",
   readTime: "6 min read",
   category: "Packing Tips",
-  image: blogFragile,
+  image: labeled,
   content: `
     <p>Unpacking after a move can feel like solving a giant puzzle—unless you’ve labeled your boxes properly. A well-thought-out labeling system not only saves time but also prevents frustration when you’re trying to find your essentials. This guide will walk you through the best methods for labeling moving boxes to guarantee a smooth and organized unpacking experience.</p>
 
@@ -178,7 +189,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-03-28",
   readTime: "7 min read",
   category: "Moving Tips",
-  image: blogPets,
+  image: ecoFriendly,
   content: `
     <p>Moving to a new home is exciting, but it often comes with a significant environmental impact. From cardboard boxes to gas-guzzling trucks, the moving process can generate unnecessary waste and emissions. Fortunately, with a little planning, you can make your move more eco-friendly while still keeping it efficient and cost-effective. Here are practical tips to reduce your carbon footprint when relocating.</p>
 
@@ -226,7 +237,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-03-12",
   readTime: "7 min read",
   category: "Packing Tips",
-  image: blogFragile,
+  image: fragile,
   content: `
     <p>Packing fragile items can be stressful, especially when you’re worried about breaking your most valuable belongings during the move. From dishes and glassware to mirrors and electronics, delicate items require extra attention and the right packing techniques. With a professional approach, you can protect your valuables and ensure they arrive safely in your new home.</p>
 
@@ -264,7 +275,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-03-20",
   readTime: "6 min read",
   category: "Packing Tips",
-  image: blogFragile,
+  image: survivalKit,
   content: `
     <p>Moving day can be exciting, but it’s also one of the most hectic parts of relocating. With boxes stacked everywhere and movers coming in and out, the last thing you want is to waste time searching for essentials. That’s where a moving day survival kit comes in handy — it keeps your must-have items accessible during the first 24–48 hours in your new home.</p>
 
@@ -309,7 +320,7 @@ export const blogPosts: BlogPost[] = [
     <p>Having a moving day survival kit makes your first day in a new home much smoother. Instead of feeling overwhelmed, you’ll have peace of mind knowing your essentials are easily accessible. Pack this kit a few days before moving and keep it with you on the big day — your future self will thank you!</p>
   `
 },
- {
+{
   title: "Moving with Pets: Everything You Need to Know",
   slug: "moving-with-pets-everything-you-need-to-know",
   excerpt: "A complete guide to ensuring your furry friends have a stress-free moving experience.",
@@ -317,7 +328,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-03-10",
   readTime: "7 min read",
   category: "Moving Tips",
-  image: blogPets,
+  image: pets,
   content: `
     <p>Moving can be stressful for everyone in the household, and that includes your pets. Animals thrive on routine, and a move can disrupt their sense of safety and comfort. With careful planning and the right approach, you can make the transition easier for your furry friends and help them settle into their new environment.</p>
 
@@ -357,7 +368,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-03-05",
   readTime: "6 min read",
   category: "Storage",
-  image: blogPets,
+  image: storage,
   content: `
     <p>Sometimes a move isn’t as straightforward as going from point A to point B. Whether you’re downsizing, waiting to move into your new home, or managing an office relocation, storage solutions can make the process smoother and less stressful. Knowing when to use storage and how to choose the right option will save you time, money, and headaches.</p>
 
@@ -406,7 +417,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-03-03",
   readTime: "8 min read",
   category: "Commercial Moving",
-  image: blogFragile,
+  image: office,
   content: `
     <p>Relocating an office is more complex than a residential move—it involves employees, clients, IT infrastructure, and sensitive documents. Without proper planning, a relocation can disrupt operations, reduce productivity, and even impact your reputation. With a clear strategy, however, you can move your business smoothly while keeping downtime to a minimum. Here’s a step-by-step guide to ensuring a successful office move.</p>
 
@@ -444,7 +455,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-03-01",
   readTime: "5 min read",
   category: "Budget Planning",
-  image: blogPets,
+  image: cost,
   content: `
     <p>One of the biggest challenges of relocating is managing costs. Without proper planning, hidden fees and unexpected expenses can quickly strain your budget. Understanding common moving expenses and learning how to budget effectively will help you stay in control and reduce financial stress during your move.</p>
 
@@ -484,7 +495,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-02-28",
   readTime: "6 min read",
   category: "Packing Tips",
-  image: blogFragile,
+  image: packingPro,
   content: `
     <p>Packing is one of the most time-consuming parts of moving, but doing it right can save you stress, money, and damage to your belongings. Professional movers know the tricks that make the process faster and safer—and the good news is, you can use these same techniques at home. Here’s how to pack like a pro and ensure a smoother moving experience.</p>
 
@@ -525,7 +536,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-02-25",
   readTime: "9 min read",
   category: "Moving Tips",
-  image: blogPets,
+  image: longDistance,
   content: `
     <p>Moving across the country—or even across state lines—requires more planning than a local move. Long-distance relocations involve careful logistics, extra costs, and additional preparation. To ensure a smooth transition, it’s essential to start early and stay organized. Here’s everything you need to know about long-distance moving.</p>
 
@@ -567,7 +578,7 @@ export const blogPosts: BlogPost[] = [
   date: "2024-02-22",
   readTime: "7 min read",
   category: "Insurance",
-  image: blogFragile,
+  image: insurance,
   content: `
     <p>When planning a move, most people focus on packing, logistics, and timelines—but what about protecting your belongings? Even with the most professional moving companies, accidents can happen. That’s where moving insurance comes in. Having the right coverage provides peace of mind and financial protection in case of damage or loss. Here’s a detailed guide to help you understand moving insurance and make the right choice for your situation.</p>
 
