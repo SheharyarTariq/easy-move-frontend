@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from '@/components/ui/button';
-import {Menu, X, Phone, Mail} from 'lucide-react';
+import {Menu, X, Phone} from 'lucide-react';
 import { config } from '../../../config';
+import Image from 'next/image';
 
 const Header = () => {
   const location = usePathname();
@@ -49,13 +50,14 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="bg-hero-gradient p-2 rounded-lg">
-              <div className="text-primary-foreground font-bold text-xl">EM</div>
+            {/* <div className="bg-hero-gradient p-2 rounded-lg">
+              <div className="text-primary-foreground font-bold text-xl">GR</div>
             </div>
             <div>
-              <h1 className="text-lg font-bold text-primary">EasyMove</h1>
+              <h1 className="text-lg font-bold text-primary">GalaxyRemovals</h1>
               <p className="text-xs text-muted-foreground">Professional Removals</p>
-            </div>
+            </div> */}
+            <Image src="/assets/blueLogo.png" alt="logo" width={190} height={80} className="rounded-full"/>
           </Link>
 
           {/* Desktop Navigation */}

@@ -12,7 +12,7 @@ const validationSchema = yup.object({
   lastName: yup.string().required('Last name is required'),
   email: yup.string().email('Invalid email').required('Email is required'),
   telephone: yup.string().required('Telephone is required'),
-  whatsappNumber: yup.string().required("required"),
+  whatsappNumber: yup.string(),
   jobType: yup.string().oneOf(['single', 'double']).required('Job type is required'),
   pickupHouseNumber: yup.string().required('House number is required'),
   pickupStreetName: yup.string().required('Street name is required'),
@@ -111,31 +111,31 @@ const GetQuote = () => {
 
     if (res.ok) {
       toast.success("Request for quote sent successfully!");
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        telephone: '',
-        whatsappNumber: '',
-        jobType: 'single',
-        pickupHouseNumber: '',
-        pickupStreetName: '',
-        pickupPostcode: '',
-        pickupPhoneNumber: '',
-        pickupDisassembling: false,
-        dropoffHouseNumber: '',
-        dropoffStreetName: '',
-        dropoffPostcode: '',
-        dropoffPhoneNumber: '',
-        dropoffAssembling: false,
-        secondDropoffHouseNumber: '',
-        secondDropoffStreetName: '',
-        secondDropoffPostcode: '',
-        secondDropoffPhoneNumber: '',
-        secondDropoffAssembling: false,
-        packagingRequired: false,
-        additionalNotes: ''
-      });
+      // setFormData({
+      //   firstName: '',
+      //   lastName: '',
+      //   email: '',
+      //   telephone: '',
+      //   whatsappNumber: '',
+      //   jobType: 'single',
+      //   pickupHouseNumber: '',
+      //   pickupStreetName: '',
+      //   pickupPostcode: '',
+      //   pickupPhoneNumber: '',
+      //   pickupDisassembling: false,
+      //   dropoffHouseNumber: '',
+      //   dropoffStreetName: '',
+      //   dropoffPostcode: '',
+      //   dropoffPhoneNumber: '',
+      //   dropoffAssembling: false,
+      //   secondDropoffHouseNumber: '',
+      //   secondDropoffStreetName: '',
+      //   secondDropoffPostcode: '',
+      //   secondDropoffPhoneNumber: '',
+      //   secondDropoffAssembling: false,
+      //   packagingRequired: false,
+      //   additionalNotes: ''
+      // });
     } else {
       const { error } = await res.json();
       console.log(error);

@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { config } from '../../../config';
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
+            {/* <div className="flex items-center space-x-2">
               <div className="bg-primary-foreground p-2 rounded-lg">
                 <div className="text-primary font-bold text-xl">EM</div>
               </div>
@@ -18,7 +19,8 @@ const Footer = () => {
                 <h3 className="text-xl font-bold">EasyMove</h3>
                 <p className="text-sm opacity-90">Professional Removals</p>
               </div>
-            </div>
+            </div> */}
+            <Image src="/assets/whiteMainLogo.png" alt="Galaxy Removal Logo" width={190} height={20} className="rounded -ml-8 -mb-8 -mt-10"/>
             <p className="text-sm opacity-90 leading-relaxed">
               Professional moving and removal services across the UK. 
               Trusted by thousands of families and businesses for safe, 
