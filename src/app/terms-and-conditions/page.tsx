@@ -67,8 +67,8 @@ const TermsAndConditions = () => {
                 For questions regarding these terms, please contact us:
               </p>
               <ul className="list-disc list-inside space-y-2">
-                <li>Email: <a href={`mailto:${config.email}`} className="hover:underline hover:text-primary">{config.email}</a></li>
-                <li>Phone: <a href={`tel:${config.email}`} className="hover:underline hover:text-primary">{config.phoneNumber}</a></li>
+                {/* <li>Email: <a href={`mailto:${config.email}`} className="hover:underline hover:text-primary">{config.email}</a></li> */}
+                <li>Phone: <a href={`tel:${config.phoneNumber}`} className="hover:underline hover:text-primary">{config.phoneNumber}</a></li>
               </ul>
             </div>
           </div>

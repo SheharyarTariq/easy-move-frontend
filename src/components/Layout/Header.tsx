@@ -33,10 +33,10 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span>{config.phoneNumber}</span>
             </a>
-            <a href={`mailto:${config.email}`} className="flex items-center gap-2">
+            {/* <a href={`mailto:${config.email}`} className="flex items-center gap-2">
               <Mail className="hidden sm:flex h-4 w-4" />
               <span>{config.email}</span>
-            </a>
+            </a> */}
           </div>
           <div className="hidden md:block">
             <span>Free Quotes • Professional Service • Fully Insured</span>

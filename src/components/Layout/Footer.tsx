@@ -68,13 +68,13 @@ const Footer = () => {
                   <p className="opacity-75">Free consultation</p>
                 </div>
               </a>
-              <a href={`mailto:${config.email}`} className="flex items-start space-x-3">
+              {/* <a href={`mailto:${config.email}`} className="flex items-start space-x-3">
                 <Mail className="h-4 w-4 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-medium">{config.email}</p>
                   <p className="opacity-75">24/7 support</p>
                 </div>
-              </a>
+              </a> */}
               <a
                 href={config.googleMapsLink}
                 target="_blank"

@@ -175,7 +175,31 @@ const About = () => {
                 Join thousands of satisfied customers who have made their move with confidence. 
                 Get your free quote today and discover why EasyMove is the UK&apos;s trusted moving partner.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+<div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
+  <Link href="/contact" className="w-full sm:w-auto">
+    <Button 
+      size="lg" 
+      className="w-full sm:w-auto bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom"
+    >
+      Get Free Quote
+    </Button>
+  </Link>
+
+  <a href={`tel:${config.phoneNumber}`} className="w-full sm:w-auto">
+    <Button 
+      size="lg" 
+      variant="outline"
+      className="w-full sm:w-auto hover:cursor-pointer"
+    >
+      <Phone className="mr-2 h-5 w-5" />
+      Call: {config.phoneNumber}
+    </Button>
+  </a>
+</div>
+
+
+              {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact" className="flex justify-center">
                   <Button size="lg" className="bg-cta-gradient hover:cursor-pointer hover:opacity-90 shadow-button-custom flex-1">
                     Get Free Quote
@@ -191,7 +215,7 @@ const About = () => {
                     Call: {config.phoneNumber}
                   </Button>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

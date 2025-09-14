@@ -47,7 +47,7 @@ const Contact = () => {
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start space-x-4 p-6 bg-card rounded-xl shadow-card-custom border border-border">
+                {/* <div className="flex items-start space-x-4 p-6 bg-card rounded-xl shadow-card-custom border border-border">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
@@ -56,7 +56,7 @@ const Contact = () => {
                     <a href={`mailto:${config.email}`} className="text-lg font-medium">{config.email}</a>
                     <p className="text-sm text-muted-foreground">We&apos;ll respond within 2 hours</p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Address */}
                 <div className="flex items-start space-x-4 p-6 bg-card rounded-xl shadow-card-custom border border-border">
