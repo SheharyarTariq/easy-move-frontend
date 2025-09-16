@@ -80,36 +80,18 @@ export async function POST(req: Request) {
       drawField("whatsappNumber", formData.whatsappNumber);
       doc.moveDown();
     
-      drawSectionHeader("Job Type");
-      drawField("jobType", formData.jobType);
-      doc.moveDown();
-    
       drawSectionHeader("Pickup Address");
       drawField("pickupHouseNumber", formData.pickupHouseNumber);
       drawField("pickupStreetName", formData.pickupStreetName);
       drawField("pickupPostcode", formData.pickupPostcode);
       drawField("pickupPhoneNumber", formData.pickupPhoneNumber);
-      drawField("pickupDisassembling", formData.pickupDisassembling);
-      drawField("packagingRequired", formData.packagingRequired);
       doc.moveDown();
     
       drawSectionHeader("Dropoff Address");
       drawField("dropoffHouseNumber", formData.dropoffHouseNumber);
       drawField("dropoffStreetName", formData.dropoffStreetName);
       drawField("dropoffPostcode", formData.dropoffPostcode);
-      drawField("dropoffPhoneNumber", formData.dropoffPhoneNumber);
-      drawField("dropoffAssembling", formData.dropoffAssembling);
       doc.moveDown();
-
-      if (formData.jobType !== 'single') {
-        drawSectionHeader("Second Dropoff Address");
-        drawField("secondDropoffHouseNumber", formData.secondDropoffHouseNumber);
-        drawField("secondDropoffStreetName", formData.secondDropoffStreetName);
-        drawField("secondDropoffPostcode", formData.secondDropoffPostcode);
-        drawField("secondDropoffPhoneNumber", formData.secondDropoffPhoneNumber);
-        drawField("secondDropoffAssembling", formData.secondDropoffAssembling);
-        doc.moveDown();
-      }
 
       drawSectionHeader("Additional Notes");
       drawField("additionalNotes", formData.additionalNotes);
@@ -132,7 +114,7 @@ export async function POST(req: Request) {
       from: process.env.FROM_EMAIL,
       to: process.env.OWNER_EMAIL,
       subject: "New Moving Quote Request",
-      text: `Hello GalaxyRemovals,
+      text: `Hello Galaxy Removals,
 
 A new quote request has been submitted through your website.
 Please find the full details in the attached PDF.
@@ -147,7 +129,7 @@ Kindly review the attachment and follow up with the client to provide a tailored
 Best regards,
 GalaxyRemovals Website System`,
   html: `
-    <p>Hello <b>GalaxyRemovals</b>,</p>
+    <p>Hello <b>Galaxy Removals</b>,</p>
     <p>A new <b>quote request</b> has been submitted through your website.<br/>
     Please find the full details in the attached PDF.</p>
 

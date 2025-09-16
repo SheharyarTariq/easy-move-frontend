@@ -12,7 +12,7 @@ const TermsAndConditions = () => {
             <div>
               <h2 className="text-section text-primary mb-4">Agreement to Terms</h2>
               <p className="mb-4">
-                By accessing and using EasyMove services, you accept and agree to be bound 
+                By accessing and using GalaxyRemovals services, you accept and agree to be bound 
                 by the terms and provision of this agreement.
               </p>
             </div>

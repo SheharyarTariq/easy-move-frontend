@@ -16,7 +16,7 @@ const Footer = () => {
                 <div className="text-primary font-bold text-xl">EM</div>
               </div>
               <div>
-                <h3 className="text-xl font-bold">EasyMove</h3>
+                <h3 className="text-xl font-bold">GalaxyRemovals</h3>
                 <p className="text-sm opacity-90">Professional Removals</p>
               </div>
             </div> */}
