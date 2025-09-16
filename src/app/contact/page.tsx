@@ -1,10 +1,9 @@
-'use client'
 import React from 'react';
+import GetQuote from '@/components/common/get-quote';
+import Map from '@/components/common/map';
+import { config } from '../../../config';
 import { Button } from '@/components/ui/button';
 import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
-import GetQuote from '@/components/common/get-quote';
-import { config } from '../../../config';
-import Map from '@/components/common/map';
 
 const Contact = () => {
 
@@ -45,18 +44,6 @@ const Contact = () => {
                     <p className="text-sm text-muted-foreground">Free calls from UK landlines and mobiles</p>
                   </div>
                 </div>
-
-                {/* Email */}
-                {/* <div className="flex items-start space-x-4 p-6 bg-card rounded-xl shadow-card-custom border border-border">
-                  <div className="bg-primary/10 p-3 rounded-lg">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-primary mb-1">Email</h3>
-                    <a href={`mailto:${config.email}`} className="text-lg font-medium">{config.email}</a>
-                    <p className="text-sm text-muted-foreground">We&apos;ll respond within 2 hours</p>
-                  </div>
-                </div> */}
 
                 {/* Address */}
                 <div className="flex items-start space-x-4 p-6 bg-card rounded-xl shadow-card-custom border border-border">

@@ -9,8 +9,8 @@ import {
   ChevronUp,
 } from "lucide-react";
 import Link from "next/link";
-import { config } from "../../../config";
-import GetQuote from "../common/get-quote";
+import { config } from "../../../../config";
+import GetQuote from "../../common/get-quote";
 
 const HeroSection = () => {
   const [isFormExpanded, setIsFormExpanded] = useState(false);
@@ -61,53 +61,30 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
 
-<div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
-  <Link href="/contact" className="w-full sm:w-auto">
-    <Button
-      size="lg"
-      variant="outline"
-      className="w-full sm:w-auto border-primary-foreground/30 hover:cursor-pointer bg-accent hover:bg-accent/90 text-accent-foreground shadow-button-custom text-lg px-8 py-6"
-    >
-      Get Free Quote
-      <ArrowRight className="ml-2 h-5 w-5" />
-    </Button>
-  </Link>
-
-  <a href={`tel:${config.phoneNumber}`} className="w-full sm:w-auto">
-    <Button
-      size="lg"
-      variant="outline"
-      className="w-full sm:w-auto border-primary-foreground/30 hover:cursor-pointer hover:bg-primary-foreground text-primary hover:text-primary text-lg px-8 py-6"
-    >
-      <Phone className="mr-2 h-5 w-5" />
-      <span>{config.phoneNumber}</span>
-    </Button>
-  </a>
-</div>
-
-
-            {/* <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link href="/contact">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full">
+              <Link href="/contact" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/30 hover:cursor-pointer bg-accent hover:bg-accent/90 text-accent-foreground shadow-button-custom text-lg px-8 py-6"
+                  className="w-full sm:w-auto border-primary-foreground/30 hover:cursor-pointer bg-accent hover:bg-accent/90 text-accent-foreground shadow-button-custom text-lg px-8 py-6"
                 >
                   Get Free Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <a href={`tel:${config.phoneNumber}`}>
+
+              <a href={`tel:${config.phoneNumber}`} className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/30 hover:cursor-pointer hover:bg-primary-foreground text-primary hover:text-primary text-lg px-8 py-6"
+                  className="w-full sm:w-auto border-primary-foreground/30 hover:cursor-pointer hover:bg-primary-foreground text-primary hover:text-primary text-lg px-8 py-6"
                 >
                   <Phone className="mr-2 h-5 w-5" />
                   <span>{config.phoneNumber}</span>
                 </Button>
               </a>
-            </div> */}
+            </div>
+
             {/* ✅ Extra Content (only when form expanded + visible on lg+) */}
             {isFormExpanded && (
               <div className="hidden lg:block bg-gradient-to-br from-accent/30 via-accent/10 to-card/70 border border-border/40 rounded-3xl shadow-xl shadow-accent/20 mt-16 p-10 mb-8 animate-fade-up backdrop-blur-sm text-white">

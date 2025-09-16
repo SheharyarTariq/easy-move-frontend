@@ -1,11 +1,11 @@
 'use client'
 import React, { useState } from 'react';
 import Link from "next/link";
+import Image from 'next/image';
 import { usePathname } from "next/navigation";
 import { Button } from '@/components/ui/button';
-import {Menu, X, Phone} from 'lucide-react';
 import { config } from '../../../config';
-import Image from 'next/image';
+import {Menu, X, Phone} from 'lucide-react';
 
 const Header = () => {
   const location = usePathname();
@@ -49,15 +49,8 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            {/* <div className="bg-hero-gradient p-2 rounded-lg">
-              <div className="text-primary-foreground font-bold text-xl">GR</div>
-            </div>
-            <div>
-              <h1 className="text-lg font-bold text-primary">GalaxyRemovals</h1>
-              <p className="text-xs text-muted-foreground">Professional Removals</p>
-            </div> */}
-            <Image src="/assets/blueLogo.png" alt="logo" width={190} height={80} className="rounded-full"/>
+          <Link href="/" className="flex items-center space-x-2 hover:cursor-pointer">
+            <Image src="/assets/blueLogo.png" alt="logo" width={190} height={80} className="rounded-full -ml-7 sm:m-0"/>
           </Link>
 
           {/* Desktop Navigation */}
