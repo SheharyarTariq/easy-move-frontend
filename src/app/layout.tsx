@@ -5,7 +5,6 @@ import { ScrollToTop } from "@/components/common/scroll-to-top";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { Toaster } from "react-hot-toast";
-import { config } from "../../config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
