@@ -28,7 +28,7 @@ const Header = () => {
     <header className="border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-background/90">
       {/* Top contact bar */}
       <div className="bg-primary text-primary-foreground py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
+        <div className="container mx-auto px-4 flex justify-between items-center text-sm z-100">
           <div className="flex items-center gap-4">
             <a href={`tel:${config.phoneNumber}`} className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
