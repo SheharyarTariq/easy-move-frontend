@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Galaxy Removals",
     images: [
       {
-        url: "https://galaxyremovals.co.uk/assets/darkMiniLogo.png",
+        url: "/assets/darkMiniLogo.png",
         width: 512,
         height: 512,
         alt: "Galaxy Removals Logo",
@@ -43,7 +43,9 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Galaxy Removals | Your Trusted, Affordable Moving Partner",
     description: "Experience a seamless relocation with our professional moving services.",
-    images: "https://galaxyremovals.co.uk/assets/darkMiniLogo.png", 
+      images: [
+        "/assets/darkMiniLogo.png",
+      ],
   },
 };
 
