@@ -27,13 +27,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Galaxy Removals | Your Trusted, Affordable Moving Partner",
     description: "Experience a seamless relocation with our professional moving services.",
-    // TODO: Replace with your actual domain for production
-    url: config.baseUrl,
+    url: "https://galaxyremovals.co.uk/",
     siteName: "Galaxy Removals",
     images: [
       {
-        // TODO: Replace with your actual domain for production
-        url: `${config.baseUrl}/assets/darkMiniLogo.png`,
+        url: "https://galaxyremovals.co.uk/assets/darkMiniLogo.png",
         width: 512,
         height: 512,
         alt: "Galaxy Removals Logo",
@@ -46,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Galaxy Removals | Your Trusted, Affordable Moving Partner",
     description: "Experience a seamless relocation with our professional moving services.",
-    images: [`${config.baseUrl}/assets/darkMiniLogo.png`], // TODO: Replace with your actual domain
+    images: "https://galaxyremovals.co.uk/assets/darkMiniLogo.png", 
   },
 };
 
