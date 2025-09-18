@@ -1,16 +1,16 @@
-import featured from '../../../public/assets/blog-posts/featured.jpeg';
-import downsize from '../../../public/assets/blog-posts/blog-featured.jpeg';
-import labeled from '../../../public/assets/blog-posts/labeled.jpeg';
-import ecoFriendly from '../../../public/assets/blog-posts/eco-friendly.jpeg';
-import fragile from '../../../public/assets/blog-posts/fragile.jpeg';
-import survivalKit from '../../../public/assets/blog-posts/survivalKit.jpeg';
-import pets from '../../../public/assets/blog-posts/pets.jpeg';
-import storage from '../../../public/assets/blog-posts/storage.jpeg';
-import office from '../../../public/assets/blog-posts/office.jpeg';
-import cost from '../../../public/assets/blog-posts/cost.jpeg';
-import insurance from '../../../public/assets/blog-posts/insurance.jpeg';
-import longDistance from '../../../public/assets/blog-posts/longDistance.jpeg';
-import packingPro from '../../../public/assets/blog-posts/packingPro.jpeg';
+import featured from '../../public/assets/blog-posts/featured.jpeg';
+import downsize from '../../public/assets/blog-posts/blog-featured.jpeg';
+import labeled from '../../public/assets/blog-posts/labeled.jpeg';
+import ecoFriendly from '../../public/assets/blog-posts/eco-friendly.jpeg';
+import fragile from '../../public/assets/blog-posts/fragile.jpeg';
+import survivalKit from '../../public/assets/blog-posts/survivalKit.jpeg';
+import pets from '../../public/assets/blog-posts/pets.jpeg';
+import storage from '../../public/assets/blog-posts/storage.jpeg';
+import office from '../../public/assets/blog-posts/office.jpeg';
+import cost from '../../public/assets/blog-posts/cost.jpeg';
+import insurance from '../../public/assets/blog-posts/insurance.jpeg';
+import longDistance from '../../public/assets/blog-posts/longDistance.jpeg';
+import packingPro from '../../public/assets/blog-posts/packingPro.jpeg';
 
 import { StaticImageData } from 'next/image';
 

@@ -2,6 +2,29 @@ import React from "react";
 import { CheckCircle, Users, Award, Shield } from "lucide-react";
 import Map from "@/components/common/map";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Galaxy Removals | Trusted House Removal Experts",
+  description:
+    "Learn about Galaxy Removals, a trusted UK moving company with over 15 years of experience. We specialize in house removal services, furniture removals, and affordable relocations across the UK.",
+  openGraph: {
+    title: "About Galaxy Removals | Trusted House Removal Experts",
+    description:
+      "Founded in 2009, Galaxy Removals has grown into one of the UK's most trusted moving companies. Discover our story, values, and commitment to stress-free relocations.",
+    url: "https://galaxyremovals.co.uk/about",
+    images: ["/assets/darkMiniLogo.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "About Galaxy Removals | Trusted House Removal Experts",
+    description:
+      "With 15+ years of experience, Galaxy Removals provides affordable and professional moving services across the UK.",
+    images: ["/assets/darkMiniLogo.png"],
+  },
+};
+
 const About = () => {
   return (
     <main>

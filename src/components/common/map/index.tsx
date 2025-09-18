@@ -1,4 +1,4 @@
-import LocationMap from '@/components/Map/LocationMap'
+import LocationMap from '@/components/common/map/location-map'
 import React from 'react'
 
 const Map = () => {

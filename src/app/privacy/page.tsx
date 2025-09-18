@@ -1,5 +1,27 @@
 import React from 'react';
 import { config } from '../../../config';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Galaxy Removals",
+  description:
+    "Read the Privacy Policy of Galaxy Removals to understand how we collect, use, and protect your personal information when you use our moving services.",
+  openGraph: {
+    title: "Privacy Policy | Galaxy Removals",
+    description:
+      "Galaxy Removals values your privacy. Learn how we collect, use, and safeguard your information in our Privacy Policy.",
+    url: "https://galaxyremovals.co.uk/privacy",
+    images: ["/assets/darkMiniLogo.png"],
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | Galaxy Removals",
+    description:
+      "Discover how Galaxy Removals handles your data responsibly and securely in our Privacy Policy.",
+    images: ["/assets/darkMiniLogo.png"],
+  },
+};
 
 const Privacy = () => {
   return (

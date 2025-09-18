@@ -4,17 +4,17 @@ import { Star, User } from 'lucide-react';
 const reviews = [
   {
     id: 1,
-    author_name: "Sarah Johnson",
+    author_name: "Sarah",
     rating: 5,
-    text: "Excellent service! The team was professional, punctual, and handled all our belongings with care. Made our house move stress-free.",
+    text: "They provided fast, professional, and stress-free service from start to finish. Highly recommended for their reliability and excellent customer care!",
     time: "2 weeks ago",
     profile_photo_url: null
   },
   {
     id: 2,
-    author_name: "Michael Chen",
+    author_name: "Junaid",
     rating: 5,
-    text: "Outstanding moving service. They arrived on time, worked efficiently, and nothing was damaged. Highly recommend for anyone moving in London.",
+    text: "I recently used Galaxy Removal House Clearance Company and was thoroughly impressed with their professionalism, efficiency, and care. From the moment I contacted them, the communication was clear and friendly. They arrived on time, worked quickly, and handled everything with respect — including fragile items and things of sentimental value. The team was polite, hardworking, and left the property spotless once the job was done. It was a huge relief to have such a reliable company take care of the clearance, especially during a stressful time.I highly recommend Galaxy Removal to anyone needing a trustworthy, hassle-free house clearance service. Five stars well deserved!",
     time: "1 month ago",
     profile_photo_url: null
   },
@@ -114,7 +114,7 @@ const GoogleReviews = () => {
               </div>
 
               {/* Review Content */}
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed line-clamp-3" title={review.text}>
                 &quot;{review.text}&quot;
               </p>
 
@@ -139,7 +139,7 @@ const GoogleReviews = () => {
             Ready to experience our exceptional service yourself?
           </p>
           <a 
-            href="https://www.google.com/search?q=easymove+removals+reviews"
+            href="https://www.google.com/maps/place/galaxy+removal/@51.4969222,-0.4193512,17z/data=!4m8!3m7!1s0xbcffb830c002c61:0x64f9c226515cb603!8m2!3d51.4969222!4d-0.4193512!9m1!1b1!16s%2Fg%2F11xyw61w_j?entry=ttu&g_ep=EgoyMDI1MDkxNS4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-primary hover:text-primary-light transition-colors"

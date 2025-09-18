@@ -18,14 +18,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Galaxy Removals | Your Trusted, Affordable Moving Partner",
+    default: "House Removal Services | Galaxy Removals UK",
     template: "%s | Galaxy Removals",
   },
-  description: "Galaxy Removals offers professional, reliable, and stress-free moving services for residential and commercial clients. Get your free quote today and experience a seamless relocation.",
+
+  description: "Galaxy Removals provides professional house removal services, full house relocations, and affordable removals across the UK. Trusted movers for furniture removals, long distance moves, and same day services.",
   viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
   openGraph: {
-    title: "Galaxy Removals | Your Trusted, Affordable Moving Partner",
-    description: "Experience a seamless relocation with our professional moving services.",
+    title: "Professional House Removal Services | Galaxy Removals",
+    description: "Affordable removals, full house relocation, and trusted movers across the UK. Book the best removal service today.",
     url: "https://galaxyremovals.co.uk/",
     siteName: "Galaxy Removals",
     images: [
@@ -41,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Galaxy Removals | Your Trusted, Affordable Moving Partner",
-    description: "Experience a seamless relocation with our professional moving services.",
-      images: [
+    title: "House Removal Services | Galaxy Removals",
+    description: "Trusted movers for house removals, furniture removals, and long distance relocations.",
+    images: [
         "/assets/darkMiniLogo.png",
       ],
   },

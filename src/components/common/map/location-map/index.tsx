@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { config } from "../../../config";
 
 const LocationMap = () => {
   // Lahore coordinates

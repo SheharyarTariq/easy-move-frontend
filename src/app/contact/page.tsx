@@ -5,6 +5,28 @@ import { config } from '../../../config';
 import { Button } from '@/components/ui/button';
 import { Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Galaxy Removals | Book Your House Removal Services",
+  description:
+    "Get in touch with Galaxy Removals for affordable house removal services, furniture removals, and same day moving across the UK. Call us, email us, or request a free quote today.",
+  openGraph: {
+    title: "Contact Galaxy Removals",
+    description:
+      "Reach out to Galaxy Removals for trusted house removal and relocation services. Call, email, or request a free quote.",
+    url: "https://galaxyremovals.co.uk/contact",
+    images: ["/assets/darkMiniLogo.png"],
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact Galaxy Removals",
+    description:
+      "Book your affordable house removal services today.",
+    images: ["/assets/darkMiniLogo.png"],
+  },
+};
+
 const Contact = () => {
 
   return (
