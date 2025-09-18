@@ -1,5 +1,27 @@
 import React from 'react';
 import { config } from '../../../config';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions | Galaxy Removals",
+  description:
+    "Read the Terms and Conditions of Galaxy Removals. Learn about our booking process, payments, liability, cancellations, and customer responsibilities.",
+  openGraph: {
+    title: "Terms and Conditions | Galaxy Removals",
+    description:
+      "Review the service agreement and policies that apply when booking with Galaxy Removals, including payment terms, liability, and cancellation policies.",
+    url: "https://galaxyremovals.co.uk/terms-and-conditions",
+    images: ["/assets/darkMiniLogo.png"],
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms and Conditions | Galaxy Removals",
+    description:
+      "Understand the booking, payment, liability, and cancellation policies of Galaxy Removals.",
+    images: ["/assets/darkMiniLogo.png"],
+  },
+};
 
 const TermsAndConditions = () => {
   return (

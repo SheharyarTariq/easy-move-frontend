@@ -12,6 +12,27 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { config } from '../../../config';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "House Removal & Moving Services | Galaxy Removals",
+  description:
+    "Affordable house removals, commercial relocations, furniture removals, and packing services across the UK. Professional movers with 15+ years of experience.",
+  openGraph: {
+    title: "Galaxy Removals – Professional House & Office Moving Services",
+    description:
+      "Trusted movers for house removals, office relocations, furniture removals, and storage solutions. Serving London and the entire UK.",
+    url: "https://galaxyremovals.co.uk/services",
+    images: ["/assets/darkMiniLogo.png"],
+  },
+  twitter: {
+    card: "summary",
+    title: "Galaxy Removals – House & Office Moving Experts",
+    description:
+      "Full-service removals including residential, commercial, furniture, long-distance, and packing services.",
+    images: ["/assets/darkMiniLogo.png"],
+  },
+};
 
 const Services = () => {
   const services = [
