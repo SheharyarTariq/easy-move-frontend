@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Founded in 2009, Galaxy Removals has grown into one of the UK's most trusted moving companies. Discover our story, values, and commitment to stress-free relocations.",
     url: "https://galaxyremovals.co.uk/about",
-    images: ["/assets/darkMiniLogo.png"],
+    images: ["/assets/blueLogo.png"],
     type: "website",
   },
   twitter: {
