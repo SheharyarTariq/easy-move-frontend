@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Galaxy Removals",
     images: [
       {
-        url: "/assets/og/blog-banner.png", // 👈 replace with actual image path
+        url: "/assets/blueLogo.png",
         width: 1200,
         height: 630,
         alt: "Galaxy Removals Blog",
