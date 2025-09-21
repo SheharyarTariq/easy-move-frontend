@@ -1,6 +1,11 @@
 import React from "react";
 import { CheckCircle, Users, Award, Shield } from "lucide-react";
 import Map from "@/components/common/map";
+import {
+  leadershipTeam,
+  values,
+  whyChooseUsFeatures,
+} from "@/lib/constants";
 
 import type { Metadata } from "next";
 
@@ -8,20 +13,22 @@ export const metadata: Metadata = {
   title: "About Galaxy Removals | Trusted House Removal Experts",
   description:
     "Learn about Galaxy Removals, a trusted UK moving company with over 15 years of experience. We specialize in house removal services, furniture removals, and affordable relocations across the UK.",
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
     title: "About Galaxy Removals | Trusted House Removal Experts",
     description:
       "Founded in 2009, Galaxy Removals has grown into one of the UK's most trusted moving companies. Discover our story, values, and commitment to stress-free relocations.",
     url: "https://galaxyremovals.co.uk/about",
     images: ["/assets/blueLogo.png"],
-    type: "website",
   },
   twitter: {
     card: "summary",
     title: "About Galaxy Removals | Trusted House Removal Experts",
     description:
       "With 15+ years of experience, Galaxy Removals provides affordable and professional moving services across the UK.",
-    images: ["/assets/darkMiniLogo.png"],
+    images: ["/assets/blueLogo.png"],
   },
 };
 
@@ -78,14 +85,7 @@ const About = () => {
                   Why Choose Us?
                 </h3>
                 <div className="space-y-4">
-                  {[
-                    "Over 15 years of experience",
-                    "5,000+ successful moves completed",
-                    "Fully licensed and insured",
-                    "4.9/5 star customer rating",
-                    "Modern fleet and equipment",
-                    "24/7 customer support",
-                  ].map((feature, index) => (
+                  {whyChooseUsFeatures.map((feature, index) => (
                     <div key={index} className="flex items-center">
                       <CheckCircle className="h-5 w-5 text-success mr-3 flex-shrink-0" />
                       <span>{feature}</span>
@@ -110,53 +110,24 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-card rounded-xl p-8 shadow-card-custom border border-border text-center animate-scale-in">
-              <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-                <Shield className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold mb-4 text-primary">
-                Trust & Reliability
-              </h3>
-              <p className="text-muted-foreground">
-                We understand you&apos;re trusting us with your most precious
-                belongings. That&apos;s why we&apos;re fully licensed, insured,
-                and committed to handling every item with the utmost care.
-              </p>
-            </div>
-
-            <div
-              className="bg-card rounded-xl p-8 shadow-card-custom border border-border text-center animate-scale-in"
-              style={{ animationDelay: "0.1s" }}
-            >
-              <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold mb-4 text-primary">
-                Customer First
-              </h3>
-              <p className="text-muted-foreground">
-                Every decision we make puts our customers first. From
-                transparent pricing to flexible scheduling, we work around your
-                needs, not the other way around.
-              </p>
-            </div>
-
-            <div
-              className="bg-card rounded-xl p-8 shadow-card-custom border border-border text-center animate-scale-in"
-              style={{ animationDelay: "0.2s" }}
-            >
-              <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-                <Award className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold mb-4 text-primary">
-                Excellence
-              </h3>
-              <p className="text-muted-foreground">
-                We&apos;re not satisfied with good enough. Our team is trained
-                to the highest standards, and we continuously invest in better
-                equipment and processes to deliver exceptional results.
-              </p>
-            </div>
+            {values.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <div
+                  key={value.title}
+                  className="bg-card rounded-xl p-8 shadow-card-custom border border-border text-center animate-scale-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                    <Icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-4 text-primary">
+                    {value.title}
+                  </h3>
+                  <p className="text-muted-foreground">{value.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -175,31 +146,14 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                name: "Junaid Asif",
-                role: "Founder & CEO",
-                description:
-                  "15+ years in logistics and moving industry. Committed to innovation and customer satisfaction.",
-              },
-              {
-                name: "Shahzaib Asif",
-                role: "Operations Director",
-                description:
-                  "Expert in operational efficiency and quality control. Ensures every move meets our high standards.",
-              },
-              {
-                name: "Akhter",
-                role: "Customer Relations Manager",
-                description:
-                  "Dedicated to customer experience and support. Available 24/7 to assist with any concerns.",
-              },
-            ].map((member, index) => (
+            {leadershipTeam.map((member, index) => (
               <div
-                key={index}
+                key={member.name}
                 className="bg-card rounded-xl p-6 shadow-card-custom border border-border text-center animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {/* For better E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness), I recommend using real photos of your team. */}
+                {/* Example: <Image src={member.image} alt={member.name} width={96} height={96} className="rounded-full mx-auto mb-4" /> */}
                 <div className="bg-primary/10 rounded-full w-24 h-24 mx-auto mb-4 flex items-center justify-center">
                   <Users className="h-12 w-12 text-primary" />
                 </div>

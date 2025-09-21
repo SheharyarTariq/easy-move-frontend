@@ -5,6 +5,7 @@ import { ScrollToTop } from "@/components/common/scroll-to-top";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { Toaster } from "react-hot-toast";
+import { siteConfig } from "../../public/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,36 +18,52 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "House Removal Services | Galaxy Removals UK",
-    template: "%s | Galaxy Removals",
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
   },
-
-  description: "Galaxy Removals provides professional house removal services, full house relocations, and affordable removals across the UK. Trusted movers for furniture removals, long distance moves, and same day services.",
-  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+  description: siteConfig.description,
+  viewport: "width=device-width, initial-scale=1.0",
+  keywords: [
+    "house removal services uk",
+    "removals uk",
+    "moving company uk",
+    "furniture removals",
+    "office relocation",
+    "man and van uk",
+    "galaxy removals",
+    "affordable removals",
+    "long distance moves",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Professional House Removal Services | Galaxy Removals",
-    description: "Affordable removals, full house relocation, and trusted movers across the UK. Book the best removal service today.",
-    url: "https://galaxyremovals.co.uk/",
-    siteName: "Galaxy Removals",
-    images: [
-      {
-        url: "/assets/darkMiniLogo.png",
-        width: 512,
-        height: 512,
-        alt: "Galaxy Removals Logo",
-      },
-    ],
-    locale: "en_US",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: [{ url: siteConfig.ogImage, width: 512, height: 512, alt: `${siteConfig.name} Logo` }],
+    locale: "en_GB",
     type: "website",
   },
   twitter: {
-    card: "summary",
-    title: "House Removal Services | Galaxy Removals",
-    description: "Trusted movers for house removals, furniture removals, and long distance relocations.",
-    images: [
-        "/assets/darkMiniLogo.png",
-      ],
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
 };
 
@@ -57,6 +74,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MovingCompany",
+              name: "Galaxy Removals",
+              url: siteConfig.url,
+              logo: `${siteConfig.url}/assets/blueLogo.png`,
+              telephone: "+447424047682",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "13 Coronation Road",
+                addressLocality: "Hayes",
+                postalCode: "UB3 4JS",
+                addressCountry: "UK",
+              },
+              areaServed: "United Kingdom",
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >    
